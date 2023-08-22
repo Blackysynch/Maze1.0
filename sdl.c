@@ -4,6 +4,7 @@
 
 int init_instance(SDL_Instance *instance)
 {
+	SDL_Init(SDL_INIT_EVERYTHING);
 	/*Initialise SDL*/
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{

@@ -1,1 +1,3 @@
 gcc @flag main.c main.h sdl.c -lSDL2 -o result
+
+gcc @flag main.c main.h raycaster.c sdl.c -lSDL2 -o resultray

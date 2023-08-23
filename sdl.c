@@ -26,6 +26,7 @@ int init_instance(SDL_Instance *instance)
 		SDL_DestroyWindow(instance->window);
 		fprintf(stderr, "SDL_CreateRenderer Error: %s\n", SDL_GetError());
 		SDL_Quit();
+		return (1);
 	}
 
 	return (0);

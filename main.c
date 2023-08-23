@@ -31,18 +31,13 @@ const int worldMap[mapWidth][mapHeight]=
 };
 
 
+int main(void){
 
-int main(){
-	
-	
 	SDL_Instance instance;
-
-	init_instance(&instance);
-
-
 	/*to quit*/
 	bool quit = false;
 	SDL_Event e;
+
 	printf("error: %s", SDL_GetError());
 
 	/*
@@ -73,13 +68,16 @@ int main(){
 				quit = true;
 			}
 		}
-		
+
+
 		/*raycast*/
 		SDL_SetRenderDrawColor(instance.renderer, 255, 0, 0, 0);
 		SDL_RenderClear(instance.renderer);
-		
-		raycaster(instance);
-		
+		/*
+		 *
+		 */	
+		raycast(instance);
+
 		SDL_RenderPresent(instance.renderer);
 		
 	}

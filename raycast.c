@@ -6,11 +6,12 @@
  * draw lines
  */
 
-void raycast(SDL_Instance instance)
+void raycast(SDL_Instance instance,  SDL_Event e)
 {
 	double posX, posY; /*x&y start position*/
 	double dirX, dirY; /*initial direction vector*/
 	double planeX, planeY; /*the 2d raycaster version of camera plane*/
+	double time, oldTime;
 
 	int x;
 	double cameraX;
@@ -32,6 +33,8 @@ void raycast(SDL_Instance instance)
 	dirY = 0;
 	planeX = 0;
 	planeY = 0.66;
+	time = 0;
+	oldTime = 0;
 
 	for (x = 0; x < w; x++)
 	{
@@ -101,7 +104,14 @@ void raycast(SDL_Instance instance)
 		}else{
 			perpWallDist = (sideDistY - deltaDistY);
 		}
+
+
+		/*new func to change color*/
 		
+		/*movement input*/
+		
+		
+		move(dirX, dirY, planeX, planeY, posX, posY, time, oldTime, e);
 		/*draws on renderer*/
 		render(perpWallDist, x, instance);
 	}

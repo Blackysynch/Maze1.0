@@ -38,21 +38,7 @@ int main(void){
 	bool quit = false;
 	SDL_Event e;
 
-	printf("error: %s", SDL_GetError());
 
-	/*
-        double posX, posY; *x&y start position*
-	double dirX, dirY; *initial direction vector*
-	double planeX, planeY; *the 2d raycaster version of camera plane*
-        double time, oldTime; time of current and previous frame*
-	int x;
-	double cameraX;
-    
-	posX = 22, posY = 12;
-	dirX = -1, dirY = 0;
-	planeX = 0, planeY = 0.66;
-
-	*/
 
 	if (init_instance(&instance) != 0)
 		return (1);
@@ -67,17 +53,17 @@ int main(void){
 			{
 				quit = true;
 			}
+
 		}
 
 
 		/*raycast*/
 		SDL_SetRenderDrawColor(instance.renderer, 255, 0, 0, 0);
 		SDL_RenderClear(instance.renderer);
-		/*
-		 *
-		 */	
-		raycast(instance);
-
+		
+		/*draws walls*/	
+		raycast(instance, e);
+		
 		SDL_RenderPresent(instance.renderer);
 		
 	}

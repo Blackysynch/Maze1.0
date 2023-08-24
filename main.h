@@ -32,8 +32,7 @@ extern const int worldMap[mapWidth][mapHeight];
 
 
 int init_instance(SDL_Instance *);
-void raycaster();
-void raycast(SDL_Instance instance);
+void raycast(SDL_Instance instance, SDL_Event e);
 void render(double perpWallDist, int x, SDL_Instance instance);
-
+void move(double dirX, double dirY, double planeX, double planeY, double posX, double posY, double time, double oldTime, SDL_Event e);
 #endif

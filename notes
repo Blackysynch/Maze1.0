@@ -1,7 +1,0 @@
-gcc @flag main.c main.h sdl.c -lSDL2 -o result
-
-gcc @flag main.c main.h raycaster.c sdl.c -lSDL2 -o resultray
-
-gcc @flag main.c main.h raycast.c sdl.c -lSDL2 -o trial
-
-gcc @flag main.h main.c raycast.c sdl.c input.c -lSDL2 -o movement
